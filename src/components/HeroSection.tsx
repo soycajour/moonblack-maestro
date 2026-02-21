@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 interface HeroSectionProps {
   onCtaClick: () => void;
@@ -26,31 +26,41 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
 
         {/* Headline */}
         <h1 className="reveal-up reveal-delay-1 text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter-custom text-gradient mb-6 leading-tight">
-          Tu web actual es un folleto muerto que te hace perder el tiempo.
+          Tu web actual está dejando pasar proyectos de 6 cifras.
         </h1>
 
         {/* Subheadline */}
-        <p className="reveal-up reveal-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 font-light">
-          Si entran leads basura o explicas lo mismo diez veces al día, te falta un sistema de filtrado, no una página bonita.
+        <p className="reveal-up reveal-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 font-light">
+          Si sigues recibiendo visitas "para ver" o llamadas preguntando "¿cuánto cuesta más o menos?", no necesitas más tráfico.
+          Necesitas un sistema que filtre antes de que te llamen.
         </p>
 
+        {/* Subtexto */}
+        <p className="reveal-up reveal-delay-2 text-sm text-primary/80 mb-8 font-medium tracking-wide">
+          Infraestructura de Captura Premium para contratistas de techado en Punta Cana y La Romana.
+        </p>
+
+        {/* Bullet points */}
+        <div className="reveal-up reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <div className="flex items-center gap-2 text-foreground/80">
+            <Check className="w-5 h-5 text-primary" />
+            <span>Elimina visitas de cortesía.</span>
+          </div>
+          <div className="flex items-center gap-2 text-foreground/80">
+            <Check className="w-5 h-5 text-primary" />
+            <span>Agenda solo proyectos con presupuesto validado.</span>
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="reveal-up reveal-delay-3">
+        <div className="reveal-up reveal-delay-4">
           <button
             onClick={onCtaClick}
             className="group btn-primary inline-flex items-center gap-3 text-lg animate-pulse-glow"
           >
-            <span>Pasar al Protocolo de Selección</span>
+            <span>Iniciar Protocolo de Selección</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="reveal-up reveal-delay-4 absolute bottom-12 left-1/2 -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 text-muted-foreground text-sm">
-            <span>Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
-          </div>
         </div>
       </div>
 
