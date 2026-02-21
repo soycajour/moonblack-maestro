@@ -22,8 +22,11 @@ const SolutionSection = () => {
         {/* Main statement */}
         <div className="max-w-4xl mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter-custom text-gradient mb-4">
-            No hacemos páginas bonitas.
+            El nuevo modelo de captación para contratistas de techado en República Dominicana
           </h2>
+          <p className="text-2xl md:text-3xl font-light text-foreground/80 mb-2">
+            No hacemos páginas bonitas.
+          </p>
           <p className="text-2xl md:text-3xl font-light text-foreground/80">
             Instalamos{" "}
             <span className="text-primary font-normal">Infraestructura de Captura y Filtrado.</span>

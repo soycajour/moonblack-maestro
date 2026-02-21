@@ -26,7 +26,7 @@ const CaseStudiesSection = () => {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-12 max-w-3xl">
-          Estructura Real
+          Casos de uso reales en Zona Este
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl">

@@ -20,6 +20,10 @@ const PainSection = () => {
             <span className="text-primary text-sm font-medium tracking-wide uppercase">El Viejo Modelo</span>
           </div>
 
+          <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-8">
+            Por qué los contratistas de techado en Zona Este pierden proyectos de alto margen
+          </h2>
+
           {/* Pain points */}
           <div className="glass-card p-8 md:p-12">
             <ul className="space-y-5">

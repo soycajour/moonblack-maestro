@@ -23,7 +23,7 @@ const ResultsSection = () => {
 
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter-custom text-gradient mb-12">
-            Resultados en 30–60 días
+            Resultados en 30–60 días para contratistas de techado en República Dominicana
           </h2>
 
           <div className="space-y-4">
