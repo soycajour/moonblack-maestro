@@ -200,7 +200,7 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
               </p>
             </div>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/gcajour/auditoria-territorial"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-3 text-lg"
