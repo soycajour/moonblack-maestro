@@ -17,6 +17,10 @@ const AboutSection = ({ onCtaClick }: AboutSectionProps) => {
         </div>
 
         <div className="max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-8">
+            Exclusividad territorial para contratistas en Punta Cana, La Romana e Higüey
+          </h2>
+
           <div className="glass-card p-8 md:p-12">
             <p className="text-2xl md:text-3xl font-light text-foreground/90 leading-relaxed tracking-tight-custom mb-6">
               No trabajamos con volumen.

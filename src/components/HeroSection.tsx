@@ -24,10 +24,15 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </span>
         </div>
 
-        {/* Headline */}
-        <h1 className="reveal-up reveal-delay-1 text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter-custom text-gradient mb-6 leading-tight">
-          Tu web actual está dejando pasar proyectos de 6 cifras.
+        {/* H1 SEO optimizado */}
+        <h1 className="reveal-up reveal-delay-1 text-3xl md:text-5xl lg:text-6xl font-light tracking-tighter-custom text-gradient mb-6 leading-tight">
+          Infraestructura de Captación para Contratistas de Techado en Punta Cana y La Romana
         </h1>
+
+        {/* Copy agresivo como párrafo destacado */}
+        <p className="reveal-up reveal-delay-2 text-xl md:text-2xl lg:text-3xl font-light text-foreground/90 max-w-3xl mx-auto mb-4 leading-tight">
+          Tu web actual está dejando pasar proyectos de 6 cifras.
+        </p>
 
         {/* Subheadline */}
         <p className="reveal-up reveal-delay-2 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 font-light">
@@ -35,7 +40,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           Necesitas un sistema que filtre antes de que te llamen.
         </p>
 
-        {/* Subtexto */}
+        {/* Subtexto geolocalizado */}
         <p className="reveal-up reveal-delay-2 text-sm text-primary/80 mb-8 font-medium tracking-wide">
           Infraestructura de Captura Premium para contratistas de techado en Punta Cana y La Romana.
         </p>

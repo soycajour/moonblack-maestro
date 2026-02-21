@@ -2,6 +2,8 @@ import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import PainSection from "@/components/PainSection";
 import SolutionSection from "@/components/SolutionSection";
+import DefinitionSection from "@/components/DefinitionSection";
+import LocalSeoSection from "@/components/LocalSeoSection";
 import ResultsSection from "@/components/ResultsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
@@ -48,6 +50,8 @@ const Index = () => {
         <HeroSection onCtaClick={handleOpenForm} />
         <PainSection />
         <SolutionSection />
+        <DefinitionSection />
+        <LocalSeoSection />
         <ResultsSection />
         <CaseStudiesSection />
         <FAQSection />
