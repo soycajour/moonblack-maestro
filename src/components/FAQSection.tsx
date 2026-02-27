@@ -34,15 +34,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="relative py-32">
+    <section className="relative section-spacing">
       <div className="container mx-auto px-6">
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-px bg-primary/50" />
+        <div className="flex items-center gap-3 mb-10">
+          <div className="w-10 h-px bg-primary/50" />
           <span className="text-primary text-sm font-medium tracking-wide uppercase">FAQ</span>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-12 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-14 max-w-3xl heading-tight">
           Preguntas frecuentes sobre captación para contratistas de techado
         </h2>
 
@@ -50,10 +50,10 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="glass-card border-none px-6">
-                <AccordionTrigger className="text-lg font-light text-foreground/90 hover:no-underline">
+                <AccordionTrigger className="text-lg font-light text-foreground/90 hover:no-underline py-5">
                   <h3 className="text-left">{faq.question}</h3>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground font-light text-base leading-relaxed">
+                <AccordionContent className="text-muted-foreground font-light text-base prose-block pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

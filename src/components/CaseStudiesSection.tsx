@@ -15,17 +15,17 @@ const CaseStudiesSection = () => {
   ];
 
   return (
-    <section className="relative py-32">
+    <section className="relative section-spacing">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-px bg-primary/50" />
+        <div className="flex items-center gap-3 mb-10">
+          <div className="w-10 h-px bg-primary/50" />
           <span className="text-primary text-sm font-medium tracking-wide uppercase">Casos de Uso</span>
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-12 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-14 max-w-3xl heading-tight">
           Casos de uso reales en Zona Este
         </h2>
 
