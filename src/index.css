@@ -34,7 +34,7 @@
     --input: 0 0% 12%;
     --ring: 160 60% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.375rem;
 
     /* Custom tokens */
     --mint: 160 60% 45%;
@@ -49,9 +49,13 @@
     --gradient-glow: radial-gradient(ellipse at center, hsl(160 60% 45% / 0.15), transparent 70%);
     --gradient-card: linear-gradient(135deg, hsl(0 0% 8% / 0.8), hsl(0 0% 4% / 0.9));
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(160 60% 45% / 0.2);
-    --shadow-subtle: 0 4px 24px hsl(0 0% 0% / 0.5);
+    /* Shadows - mechanical, no soft glow */
+    --shadow-glow: 0 0 30px hsl(160 60% 45% / 0.15);
+    --shadow-subtle: 0 2px 12px hsl(0 0% 0% / 0.6);
+
+    /* Spacing scale */
+    --section-gap: 10rem;
+    --section-gap-mobile: 6rem;
   }
 
   .dark {
@@ -77,16 +81,18 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+    border-radius: var(--radius);
     box-shadow: var(--shadow-subtle);
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-300;
+    @apply glass-card;
+    transition: border-color 100ms ease, box-shadow 100ms ease;
   }
 
   .glass-card-hover:hover {
-    @apply border-primary/30;
+    @apply border-primary/40;
     box-shadow: var(--shadow-glow);
   }
 
@@ -101,13 +107,29 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium 
-           transition-all duration-300 hover:shadow-lg relative overflow-hidden;
+    @apply bg-primary text-primary-foreground px-8 py-4 font-medium 
+           relative overflow-hidden;
+    border-radius: var(--radius);
+    transition: transform 80ms ease, box-shadow 80ms ease;
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 24px hsl(160 60% 45% / 0.25);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0px);
+    box-shadow: none;
+    transition-duration: 40ms;
   }
 
   .btn-primary::before {
     content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 opacity-0;
+    transition: opacity 80ms ease;
     background: linear-gradient(135deg, hsl(160 70% 55%), hsl(160 60% 45%));
   }
 
@@ -115,13 +137,25 @@
     @apply opacity-100;
   }
 
-  .btn-primary span {
+  .btn-primary span,
+  .btn-primary svg {
     @apply relative z-10;
   }
 
   .btn-outline {
-    @apply border border-border/80 text-foreground px-6 py-3 rounded-lg font-medium 
-           transition-all duration-300 hover:border-primary/50 hover:bg-primary/5;
+    @apply border border-border/80 text-foreground px-6 py-3 font-medium;
+    border-radius: var(--radius);
+    transition: border-color 80ms ease, background-color 80ms ease;
+    min-height: 48px;
+  }
+
+  .btn-outline:hover {
+    @apply border-primary/50 bg-primary/5;
+  }
+
+  .btn-outline:active {
+    @apply bg-primary/10;
+    transition-duration: 40ms;
   }
 
   .mesh-bg {
@@ -132,16 +166,39 @@
     box-shadow: var(--shadow-glow);
   }
 
+  /* Sections: increased whitespace (+30%) */
+  .section-spacing {
+    padding-top: var(--section-gap);
+    padding-bottom: var(--section-gap);
+  }
+
+  @media (max-width: 768px) {
+    .section-spacing {
+      padding-top: var(--section-gap-mobile);
+      padding-bottom: var(--section-gap-mobile);
+    }
+  }
+
+  /* Text legibility */
+  .prose-block {
+    max-width: 65ch;
+    line-height: 1.55;
+  }
+
+  .heading-tight {
+    line-height: 1.1;
+  }
+
   .reveal-up {
-    animation: revealUp 0.8s ease-out forwards;
+    animation: revealUp 0.6s ease-out forwards;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
 
   .reveal-delay-1 { animation-delay: 0.1s; }
-  .reveal-delay-2 { animation-delay: 0.2s; }
-  .reveal-delay-3 { animation-delay: 0.3s; }
-  .reveal-delay-4 { animation-delay: 0.4s; }
+  .reveal-delay-2 { animation-delay: 0.15s; }
+  .reveal-delay-3 { animation-delay: 0.2s; }
+  .reveal-delay-4 { animation-delay: 0.25s; }
 }
 
 @layer utilities {
@@ -167,8 +224,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px hsl(160 60% 45% / 0.2); }
-  50% { box-shadow: 0 0 40px hsl(160 60% 45% / 0.4); }
+  0%, 100% { box-shadow: 0 0 16px hsl(160 60% 45% / 0.15); }
+  50% { box-shadow: 0 0 28px hsl(160 60% 45% / 0.3); }
 }
 
 .animate-float {

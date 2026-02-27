@@ -13,7 +13,7 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
 
   const handleClose = () => {
     setIsExiting(true);
-    setTimeout(onClose, 300);
+    setTimeout(onClose, 200);
   };
 
   const handleSectorSelect = (isContractor: boolean) => {
@@ -45,11 +45,11 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
       case "welcome":
         return (
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto bg-primary/10 flex items-center justify-center" style={{ borderRadius: 'var(--radius)' }}>
               <Shield className="w-8 h-8 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-gradient mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-gradient mb-4 heading-tight">
                 Protocolo de Selección de Casos de Éxito
               </h2>
               <p className="text-muted-foreground">
@@ -71,25 +71,25 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
           <div className="space-y-8 animate-fade-in">
             <div>
               <span className="text-primary text-sm font-medium">Pregunta 1 de 3</span>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2 heading-tight">
                 ¿Cuál es tu sector?
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <button
                 onClick={() => handleSectorSelect(true)}
-                className="w-full glass-card-hover p-6 text-left group"
+                className="w-full glass-card-hover p-5 text-left group min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg text-foreground group-hover:text-primary transition-colors">
+                  <span className="text-lg text-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }}>
                     Contratista - Construcción
                   </span>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }} />
                 </div>
               </button>
               <button
                 onClick={() => handleSectorSelect(false)}
-                className="w-full glass-card-hover p-6 text-left group border-muted/30"
+                className="w-full glass-card-hover p-5 text-left group border-muted/30 min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-lg text-muted-foreground">
@@ -107,14 +107,14 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
           <div className="space-y-8 animate-fade-in">
             <div>
               <span className="text-primary text-sm font-medium">Pregunta 2 de 3</span>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2 heading-tight">
                 ¿Cuál es tu facturación mensual?
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <button
                 onClick={() => handleRevenueSelect("less-5k")}
-                className="w-full glass-card-hover p-6 text-left group border-muted/30"
+                className="w-full glass-card-hover p-5 text-left group border-muted/30 min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-lg text-muted-foreground">
@@ -125,24 +125,24 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
               </button>
               <button
                 onClick={() => handleRevenueSelect("5k-15k")}
-                className="w-full glass-card-hover p-6 text-left group"
+                className="w-full glass-card-hover p-5 text-left group min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg text-foreground group-hover:text-primary transition-colors">
+                  <span className="text-lg text-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }}>
                     $5,000 - $15,000
                   </span>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }} />
                 </div>
               </button>
               <button
                 onClick={() => handleRevenueSelect("15k-plus")}
-                className="w-full glass-card-hover p-6 text-left group"
+                className="w-full glass-card-hover p-5 text-left group min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg text-foreground group-hover:text-primary transition-colors">
+                  <span className="text-lg text-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }}>
                     Más de $15,000
                   </span>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }} />
                 </div>
               </button>
             </div>
@@ -154,25 +154,25 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
           <div className="space-y-8 animate-fade-in">
             <div>
               <span className="text-primary text-sm font-medium">Pregunta 3 de 3</span>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground mt-2 heading-tight">
                 ¿Qué es más importante para ti?
               </h2>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <button
                 onClick={() => handlePrioritySelect(true)}
-                className="w-full glass-card-hover p-6 text-left group"
+                className="w-full glass-card-hover p-5 text-left group min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-lg text-foreground group-hover:text-primary transition-colors">
+                  <span className="text-lg text-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }}>
                     Una solución profesional que genere resultados
                   </span>
-                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary" style={{ transition: 'color 80ms ease' }} />
                 </div>
               </button>
               <button
                 onClick={() => handlePrioritySelect(false)}
-                className="w-full glass-card-hover p-6 text-left group border-muted/30"
+                className="w-full glass-card-hover p-5 text-left group border-muted/30 min-h-[48px]"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-lg text-muted-foreground">
@@ -188,11 +188,11 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
       case "success":
         return (
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 flex items-center justify-center glow-effect">
+            <div className="w-20 h-20 mx-auto bg-primary/20 flex items-center justify-center glow-effect" style={{ borderRadius: 'var(--radius)' }}>
               <CheckCircle className="w-10 h-10 text-primary" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-gradient mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-gradient mb-4 heading-tight">
                 Tu negocio califica para una Auditoría Técnica
               </h2>
               <p className="text-muted-foreground">
@@ -203,7 +203,7 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
               href="https://calendly.com/gcajour/auditoria-territorial"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-3 text-lg"
+              className="btn-primary inline-flex items-center gap-3 text-lg px-10 py-5"
             >
               <Calendar className="w-5 h-5" />
               <span>Reservar Auditoría</span>
@@ -214,25 +214,24 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
       case "rejected":
         return (
           <div className="text-center space-y-8 animate-fade-in">
-            <div className="w-20 h-20 mx-auto rounded-full bg-destructive/10 flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto bg-destructive/10 flex items-center justify-center" style={{ borderRadius: 'var(--radius)' }}>
               <XCircle className="w-10 h-10 text-destructive/70" />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground/80 mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground/80 mb-4 heading-tight">
                 Acceso Denegado
               </h2>
               <p className="text-muted-foreground max-w-md mx-auto">
                 No somos compatibles. No trabajamos con negocios sin tracción económica o fuera del sector de construcción.
               </p>
             </div>
-            {/* No exit buttons as per spec */}
           </div>
         );
     }
   };
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${isExiting ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 ${isExiting ? 'opacity-0' : 'opacity-100'}`} style={{ transition: 'opacity 200ms ease' }}>
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-background/95 backdrop-blur-xl"
@@ -240,13 +239,14 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
       />
       
       {/* Form container */}
-      <div className={`relative w-full max-w-xl glass-card p-8 md:p-12 transition-transform duration-300 ${isExiting ? 'scale-95' : 'scale-100'}`}>
-        {/* Close button (hidden on rejected) */}
+      <div className={`relative w-full max-w-xl glass-card p-8 md:p-12 ${isExiting ? 'scale-95' : 'scale-100'}`} style={{ transition: 'transform 200ms ease' }}>
+        {/* Close button */}
         {step !== "rejected" && step !== "success" && (
           <button
             onClick={handleClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-muted/50 flex items-center justify-center 
-                       text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center 
+                       text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted min-h-[48px] min-w-[48px]"
+            style={{ borderRadius: 'var(--radius)', transition: 'color 80ms ease, background-color 80ms ease' }}
           >
             ×
           </button>
@@ -255,11 +255,12 @@ const GatekeeperForm = ({ onClose }: GatekeeperFormProps) => {
         {/* Progress bar */}
         {step !== "welcome" && step !== "success" && step !== "rejected" && (
           <div className="mb-8">
-            <div className="h-1 bg-muted rounded-full overflow-hidden">
+            <div className="h-1 bg-muted overflow-hidden" style={{ borderRadius: 'var(--radius)' }}>
               <div 
-                className="h-full bg-primary transition-all duration-500"
+                className="h-full bg-primary"
                 style={{ 
-                  width: step === "sector" ? "33%" : step === "revenue" ? "66%" : "100%" 
+                  width: step === "sector" ? "33%" : step === "revenue" ? "66%" : "100%",
+                  transition: 'width 150ms ease'
                 }}
               />
             </div>
