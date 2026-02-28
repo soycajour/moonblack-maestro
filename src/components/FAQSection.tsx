@@ -1,9 +1,19 @@
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  }),
+};
 
 const FAQSection = () => {
   const faqs = [
@@ -36,17 +46,37 @@ const FAQSection = () => {
   return (
     <section className="relative section-spacing">
       <div className="container mx-auto px-6">
-        {/* Section label */}
-        <div className="flex items-center gap-3 mb-10">
-          <div className="w-10 h-px bg-primary/50" />
-          <span className="text-primary text-sm font-medium tracking-wide uppercase">FAQ</span>
-        </div>
+        <motion.div
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="flex items-center gap-3 mb-10"
+        >
+          <div className="w-10 h-px bg-muted-foreground/30" />
+          <span className="text-muted-foreground text-sm font-medium tracking-wide uppercase">FAQ</span>
+        </motion.div>
 
-        <h2 className="text-3xl md:text-4xl font-light tracking-tighter-custom text-gradient mb-14 max-w-3xl heading-tight">
+        <motion.h2
+          custom={1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="text-3xl md:text-4xl font-light tracking-tighter-custom text-foreground mb-14 max-w-3xl heading-tight"
+        >
           Preguntas frecuentes sobre captación para contratistas de techado
-        </h2>
+        </motion.h2>
 
-        <div className="max-w-3xl">
+        <motion.div
+          custom={2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="max-w-3xl"
+        >
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="glass-card border-none px-6">
@@ -59,7 +89,7 @@ const FAQSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

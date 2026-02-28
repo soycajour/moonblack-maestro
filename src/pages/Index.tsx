@@ -19,14 +19,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 py-4">
         <div className="container mx-auto px-6">
           <div className="glass-card px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 border border-primary flex items-center justify-center">
-                <span className="text-primary font-semibold text-sm">M</span>
+              <div className="w-8 h-8 rounded-lg glass-card flex items-center justify-center">
+                <span className="text-foreground font-semibold text-sm">M</span>
               </div>
               <span className="text-foreground font-medium hidden sm:block">MoonBlack</span>
             </div>
