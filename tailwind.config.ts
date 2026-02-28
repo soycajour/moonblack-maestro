@@ -50,14 +50,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        mint: {
-          DEFAULT: "hsl(var(--mint))",
-          glow: "hsl(var(--mint-glow))",
-        },
-        smoke: {
-          DEFAULT: "hsl(var(--smoke))",
-          light: "hsl(var(--smoke-light))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",

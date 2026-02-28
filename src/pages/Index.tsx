@@ -1,11 +1,5 @@
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
-import PainSection from "@/components/PainSection";
-import SolutionSection from "@/components/SolutionSection";
-import DefinitionSection from "@/components/DefinitionSection";
-import LocalSeoSection from "@/components/LocalSeoSection";
-import ResultsSection from "@/components/ResultsSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
 import AboutSection from "@/components/AboutSection";
 import GatekeeperForm from "@/components/GatekeeperForm";
@@ -31,7 +25,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="glass-card px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary/20 flex items-center justify-center" style={{ borderRadius: 'var(--radius)' }}>
+              <div className="w-8 h-8 border border-primary flex items-center justify-center">
                 <span className="text-primary font-semibold text-sm">M</span>
               </div>
               <span className="text-foreground font-medium hidden sm:block">MoonBlack</span>
@@ -40,7 +34,7 @@ const Index = () => {
               onClick={handleOpenForm}
               className="btn-outline text-sm py-2 px-4"
             >
-              Protocolo de Selección
+              PROTOCOLO DE SELECCIÓN
             </button>
           </div>
         </div>
@@ -48,12 +42,6 @@ const Index = () => {
 
       <main>
         <HeroSection onCtaClick={handleOpenForm} />
-        <PainSection />
-        <SolutionSection />
-        <DefinitionSection />
-        <LocalSeoSection />
-        <ResultsSection />
-        <CaseStudiesSection />
         <FAQSection />
         <AboutSection onCtaClick={handleOpenForm} />
       </main>
