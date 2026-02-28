@@ -1,274 +1,144 @@
-# Plan: Reestructuración SEO Completa (GEO + LLMO + SGO + SXO + SEO Local Avanzado)
 
-## Resumen
 
-Reestructurar el `index.html` y los componentes React para maximizar posicionamiento en:
+## Plan: Refactorizacion Estetica Total - Protocolo Rojo/Negro Enterprise
 
-- Buscadores clásicos (Google orgánico)
-- Motores de búsqueda generativa (Google SGE, ChatGPT, Perplexity)
-- Búsqueda por voz (Voice Search)
-- SEO Local fuerte en Zona Este
+### Resumen
 
-Manteniendo:
-
-- Estética ultra-dark intacta
-- Tono agresivo high-converting
-- Estructura de conversión actual
-- Gatekeeper como único CTA
+Transformacion visual completa: eliminar toda la paleta verde menta, adoptar esquema negro puro + blanco + rojo sangre como unico acento tactico. Reestructurar el Hero Section para incluir VSL (Loom video) y reducir drasticamente la carga cognitiva eliminando secciones de ruido.
 
 ---
 
-## 1. Head SEO Completo (index.html)
+### 1. Paleta de Colores (`src/index.css`)
 
-### Mantener y optimizar:
+Reemplazar todos los tokens de color:
 
-- Title optimizado con keyword + ubicación
-- Meta description declarativa clara
-- Open Graph completo
-- Canonical
-- Meta robots: index, follow
-- Viewport (eliminar duplicado si existe)
+- `--primary`: cambiar de `160 60% 45%` (verde menta) a `0 100% 50%` (rojo #FF0000)
+- `--primary-foreground`: mantener `0 0% 100%` (blanco) para contraste sobre rojo
+- `--accent`: cambiar a `0 100% 25%` (rojo oscuro)
+- `--accent-foreground`: cambiar a `0 100% 70%`
+- `--ring`: cambiar a `0 100% 50%`
+- Eliminar tokens `--mint`, `--mint-glow` o reasignarlos a rojo
+- Eliminar `--gradient-mesh`, `--gradient-glow` (reemplazar por negro puro)
+- Eliminar `--shadow-glow` (sin brillos)
+- Eliminar animaciones `pulse-glow` y `float` (ruido visual)
+- `--radius`: cambiar a `0` (bordes cuadrados absolutos)
 
-### Agregar:
+Actualizar `.text-gradient` para que sea blanco puro sin degradado.
+Eliminar `.text-gradient-mint`.
+Eliminar `.mesh-bg` y `.glow-effect`.
 
-- `hreflang="es-DO"` en `<html>`
-- Meta geo.region (DO-11)
-- Meta geo.placename (Punta Cana, La Romana, Higüey)
-- Meta geo.position (coordenadas aproximadas Zona Este)
-- Script JSON-LD ProfessionalService
-- Script JSON-LD FAQPage (al final del body)
+Actualizar `.btn-primary`:
+- Fondo negro, borde 2px rojo, texto blanco mayusculas
+- `border-radius: 0`
+- Hover: fondo rojo (#FF0000), texto blanco
+- Active: `transform: scale(0.95)`, transicion 200ms
+- Eliminar `::before` pseudo-elemento
 
----
+Actualizar `.btn-outline`:
+- Borde rojo en hover
+- `border-radius: 0`
 
-## 2. Estructura Semántica H1-H2-H3
+Actualizar `.glass-card`:
+- `border-radius: 0`
+- Eliminar backdrop-blur o reducir
 
-Reestructuración obligatoria:
+Fuente: Agregar peso 700/800 al import de Inter para titulos Extra-Bold.
 
+### 2. Hero Section (`src/components/HeroSection.tsx`)
 
-| Sección            | Tag        | Contenido                                                                             |
-| ------------------ | ---------- | ------------------------------------------------------------------------------------- |
-| Hero               | H1 (único) | "Infraestructura de Captación para Contratistas de Techado en Punta Cana y La Romana" |
-| Pain               | H2         | "Por qué los contratistas de techado en Zona Este pierden proyectos de alto margen"   |
-| Solution           | H2         | "El nuevo modelo de captación para contratistas de techado en República Dominicana"   |
-| Definition (NUEVA) | H2         | "Qué es una Infraestructura de Captación para Contratistas de Techado"                |
-| SEO Local (NUEVA)  | H2         | "Cómo conseguir clientes de techado en Punta Cana"                                    |
-| Results            | H2         | "Resultados en 30-60 días para contratistas de techado en República Dominicana"       |
-| Cases              | H2         | "Casos de uso reales en Zona Este"                                                    |
-| FAQ                | H2 + H3    | Cada pregunta será H3                                                                 |
-| About              | H2         | "Exclusividad territorial para contratistas en Punta Cana, La Romana e Higüey"        |
+Reestructuracion completa del contenido:
 
+- Eliminar badge "MoonBlack Studios"
+- Eliminar orbes flotantes (gradient orbs)
+- Eliminar mesh-bg
+- Eliminar bullet points de Check
+- Eliminar parrafos intermedios (copy agresivo, subheadline, subtexto geolocalizado)
 
----
+Nuevo contenido del Hero (de arriba a abajo):
 
-## 3. Nueva Sección Independiente: DefinitionSection.tsx (GEO / LLMO)
+1. **H1** (mantener tag `<h1>`): "INFRAESTRUCTURA DE VENTAS PARA CONTRATISTAS DE TECHOS EN HIGUEY, PUNTA CANA Y LA ROMANA."
+   - Estilo: uppercase, font-extrabold, tracking tight, blanco puro, sin text-gradient
 
-⚠ Importante: NO debe ir dentro de SolutionSection.
+2. **Subtitulo** (`<p>`): "Filtramos curiosos. Te entregamos clientes listos para blindar su propiedad contra huracanes y salitre. Cero paja."
 
-Debe ser componente independiente.
+3. **VSL Video embed** (Loom iframe):
+   - Container con `max-width: 800px`, centrado, aspect ratio 16:9
+   - Borde 2px solid `#333`
+   - Iframe src: `https://www.loom.com/embed/941199bcd3d84a03a16ab401f34cbe89`
 
-### H2:
+4. **CTA Button**: "INICIAR PROTOCOLO DE SELECCION"
+   - Usa clase `btn-primary` actualizada (negro, borde rojo, hover rojo)
+   - Sin icono ArrowRight
+   - Sin `animate-pulse-glow`
 
-"Qué es una Infraestructura de Captación para Contratistas de Techado"
+5. **Advertencia** (`<p>`): "No somos una ONG. Solo para negocios que facturan +$5k/mes y entienden que su tiempo vale dinero."
+   - Estilo: texto pequeno, muted, sin decoracion
 
-### Contenido:
+### 3. Eliminacion de Secciones en Index.tsx
 
-- 100–120 palabras
-- Estilo enciclopédico
-- Declarativo
-- Sin tono de venta
-- Citable por IA
-- Mencionar: Punta Cana, Zona Este, República Dominicana
+Eliminar del layout:
+- `PainSection` (seccion "Una web tradicional es un folleto muerto")
+- `SolutionSection` (bullets genericos)
+- `DefinitionSection`
+- `LocalSeoSection`
+- `ResultsSection`
+- `CaseStudiesSection`
 
-Objetivo:  
-Optimización para Google SGE y citabilidad en ChatGPT.
+Mantener:
+- HeroSection (reestructurado)
+- FAQSection
+- AboutSection
+- Footer
+- GatekeeperForm
 
-Se ubicará después de SolutionSection.
+Orden final: Hero -> FAQ -> About -> Footer
 
----
+### 4. Navegacion (`src/pages/Index.tsx`)
 
-## 4. Nueva Sección: LocalSeoSection.tsx (SEO Local Contextual + Voice Search)
+Actualizar nav:
+- Eliminar `bg-primary/20` del logo (usar rojo o blanco)
+- `btn-outline` del nav: borde cuadrado, hover rojo
+- `border-radius: 0` en todos los elementos
 
-### H2:
+### 5. Componentes secundarios actualizados
 
-"Cómo conseguir clientes de techado en Punta Cana"
+**FAQSection.tsx**: Los colores `text-primary` ahora seran rojo automaticamente por el cambio de tokens. No requiere cambios de markup.
 
-### Contenido:
+**AboutSection.tsx**: Mismo efecto automatico. El CTA usara `btn-primary` actualizado.
 
-- 120–150 palabras
-- Respuesta directa tipo Voice Search
-- Incluir frase natural:  
-"Si le preguntas a Google cómo conseguir clientes de techado en Punta Cana..."
-- Mencionar naturalmente:  
-Punta Cana, La Romana, Higüey, Zona Este, República Dominicana
-- Tono profesional, no corporativo
+**Footer.tsx**: El `bg-primary/20` del logo cambiara a rojo automaticamente.
 
-Se posicionará entre DefinitionSection y ResultsSection.
+**GatekeeperForm.tsx**: Los colores primary cambian a rojo automaticamente. Los `glass-card` tendran `border-radius: 0`.
 
----
+### 6. Tailwind Config (`tailwind.config.ts`)
 
-## 5. Entity Reinforcement Layer (Refuerzo Estratégico)
-
-En múltiples secciones agregar menciones naturales como:
-
-- "Contratistas de techado en Punta Cana que facturan más de $15,000 USD al mes"
-- "Empresas de techado en Zona Este con cuadrillas activas"
-- "Negocios de techado en República Dominicana que buscan exclusividad territorial"
-
-Objetivo:
-
-- Reforzar perfil ideal
-- Mejorar LLMO
-- Mejorar intención comercial local
-- Fortalecer segmentación algorítmica
-
-No hacer keyword stuffing.
-
----
-
-## 6. FAQ Reestructurada para SGO (FAQSection.tsx)
-
-### H2 principal:
-
-"Preguntas frecuentes sobre captación para contratistas de techado"
-
-Cada pregunta será H3.
-
-### Preguntas obligatorias:
-
-- ¿Cuánto cuesta el marketing para techadores en República Dominicana?
-- ¿Cómo filtrar clientes de techado que no tienen presupuesto?
-- ¿Esto es publicidad tradicional?
-- ¿Trabajan por comisión?
-- ¿Qué pasa si ya hago anuncios?
-- ¿Trabajan con más de un contratista por zona?
-
-### Respuestas:
-
-- 80–120 palabras máximo
-- Claras
-- Citables
-- Sin relleno
-
-Agregar Schema FAQPage JSON-LD en index.html.
+- Eliminar colores `mint` y `smoke` custom
+- Actualizar si es necesario para reflejar nueva paleta
 
 ---
 
-## 7. Actualización de Secciones Existentes
+### Archivos a modificar
 
-### HeroSection.tsx
+- `src/index.css` - Paleta completa, botones, utilidades
+- `src/components/HeroSection.tsx` - Reestructuracion total del Hero
+- `src/pages/Index.tsx` - Eliminar secciones, simplificar layout
+- `tailwind.config.ts` - Limpiar colores custom
 
-- H1 optimizado SEO
-- Copy agresivo pasa debajo como párrafo destacado
-- Mantener bullets y CTA al Gatekeeper
-- Mantener geolocalización
+### Archivos que se actualizan automaticamente (por cambio de tokens CSS)
 
----
+- FAQSection, AboutSection, Footer, GatekeeperForm (no requieren edicion manual)
 
-### PainSection.tsx
+### Archivos que quedan sin uso (pero no se eliminan para preservar SEO)
 
-- H2 con keyword + ubicación
-- Mantener estructura actual
-- Incluir menciones locales naturales
+- PainSection.tsx, SolutionSection.tsx, DefinitionSection.tsx, LocalSeoSection.tsx, ResultsSection.tsx, CaseStudiesSection.tsx (se eliminan del import en Index.tsx)
 
----
+### Checklist de autoverificacion
 
-### SolutionSection.tsx
-
-- H2 con keyword principal
-- Mantener bullets actuales
-- No incluir definición aquí
-
----
-
-### ResultsSection.tsx
-
-- H2 con mención República Dominicana
-- Incluir referencia a Zona Este
-
----
-
-### CaseStudiesSection.tsx
-
-- H2 con mención Zona Este
-- Mantener estructura
-
----
-
-### AboutSection.tsx
-
-- H2 con mención Punta Cana, La Romana, Higüey
-- Refuerzo fuerte de exclusividad territorial
-- Mantener CTA único al Gatekeeper
-
----
-
-## 8. Schema JSON-LD (index.html)
-
-Agregar al final del body:
-
-### ProfessionalService
-
-- name: MoonBlack Studios
-- serviceType: Infraestructura de Captación para Contratistas de Techado
-- areaServed:
-  - Punta Cana
-  - La Romana
-  - Higüey
-  - Zona Este
-- priceRange: "$$$$"
-- url
-- description
-
----
-
-### FAQPage
-
-Incluir todas las preguntas del FAQ con sus respuestas exactas.
-
----
-
-## 9. Orden Final de Secciones en Index.tsx
-
-1. HeroSection (H1 geolocalizado)
-2. PainSection (problema – intención comercial)
-3. SolutionSection (mecanismo)
-4. DefinitionSection (GEO independiente)
-5. LocalSeoSection (SEO local contextual)
-6. ResultsSection
-7. CaseStudiesSection
-8. FAQSection
-9. AboutSection (exclusividad territorial)
-10. Footer
-
----
-
-## 10. Archivos a Modificar
-
-- index.html
-- src/components/HeroSection.tsx
-- src/components/PainSection.tsx
-- src/components/SolutionSection.tsx
-- src/components/ResultsSection.tsx
-- src/components/CaseStudiesSection.tsx
-- src/components/FAQSection.tsx
-- src/components/AboutSection.tsx
-- src/pages/Index.tsx
-
----
-
-## 11. Archivos a Crear
-
-- src/components/DefinitionSection.tsx
-- src/components/LocalSeoSection.tsx
-
----
-
-## Principios Mantenidos
-
-- Tono agresivo intacto
-- Estética ultra-dark preservada
-- Todos los CTAs siguen apuntando al Gatekeeper
-- Copy de venta no diluido
-- Bloques GEO/LLMO agregados como secciones complementarias
-- No convertir la landing en blog
-- Optimización sin sacrificar conversión
+- [ ] Cero verde/menta en toda la interfaz
+- [ ] Rojo usado SOLO en CTAs y elementos de conversion
+- [ ] Border-radius 0 en todos los elementos
+- [ ] Transiciones < 400ms, cortes secos
+- [ ] VSL embebido y visible antes de cualquier CTA
+- [ ] H1 mantiene tag semantico (solo cambia contenido y estilo)
+- [ ] Advertencia visible debajo del CTA
+- [ ] Mobile friendly (min 48x48px en CTAs)
