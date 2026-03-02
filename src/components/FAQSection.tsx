@@ -23,11 +23,11 @@ const FAQSection = () => {
     },
     {
       question: "¿Cómo filtrar clientes de techado que no tienen presupuesto?",
-      answer: "El sistema MoonBlack implementa un cuestionario de calificación obligatorio antes de que cualquier prospecto pueda agendar una reunión. Este filtro valida capacidad financiera, tipo de proyecto y urgencia. Los presupuestos menores a $10,000 USD se bloquean automáticamente. Las consultas de reparaciones menores y parches se descartan. Solo pasan prospectos con proyectos estructurales o remodelaciones completas con capacidad de pago verificada.",
+      answer: "El sistema MoonBlack no utiliza formularios estáticos ni bots de respuesta rígida. Implementamos un Agente de IA especializado en Roofing que realiza una entrevista de calificación dinámica en tiempo real. Este protocolo de selección analiza mediante lenguaje natural la capacidad financiera, el tipo de proyecto y la urgencia del daño. La IA está programada para aplicar Autoridad y Desapego: si detecta que el presupuesto es menor a $10,000 USD o se trata de reparaciones menores y parches, el prospecto es descartado automáticamente para no quitarle tiempo a sus instaladores. Solo los proyectos de reemplazo estructural o remodelaciones completas con capacidad de pago verificada llegan a su calendario.",
     },
     {
       question: "¿Esto es publicidad tradicional?",
-      answer: "No. MoonBlack Studios no hace publicidad tradicional ni campañas de pago por clic. Instalamos una infraestructura digital permanente diseñada para filtrar y controlar la calidad de cada prospecto que llega a tu empresa de techado. Es un activo digital que trabaja las 24 horas del día, posicionando tu marca como referente premium en tu zona y descartando automáticamente prospectos que no califican.",
+      answer: "No. La publicidad tradicional persigue métricas de vanidad como clics y vistas que no se traducen en techos instalados. MoonBlack Studios instala una Infraestructura de Adquisición de Alto Valor diseñada para capturar y filtrar demanda real de forma inmediata. Somos arquitectos de sistemas de inteligencia artificial. No gestionamos contenido ni buscamos aprobación social. Nuestro protocolo aplica Autoridad y Desapego para garantizar que usted solo hable con prospectos que tienen el presupuesto y la urgencia necesarios para firmar un contrato hoy mismo. Usted se encarga de la obra; nuestro sistema se encarga de que sea rentable.",
     },
     {
       question: "¿Trabajan por comisión?",
