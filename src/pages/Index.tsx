@@ -52,7 +52,7 @@ const Index = () => {
         <AboutSection onCtaClick={handleOpenForm} />
       </main>
 
-      <Footer />
+      <Footer onCtaClick={handleOpenForm} />
 
       {showForm && <GatekeeperForm onClose={handleCloseForm} />}
     </div>

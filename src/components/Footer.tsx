@@ -1,4 +1,8 @@
-const Footer = () => {
+interface FooterProps {
+  onCtaClick?: () => void;
+}
+
+const Footer = ({ onCtaClick }: FooterProps) => {
   return (
     <footer className="py-12 border-t border-white/[0.06]">
       <div className="container mx-auto px-6">
@@ -12,7 +16,13 @@ const Footer = () => {
           <nav aria-label="Enlaces del pie de página" className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="/#faq" title="Preguntas frecuentes sobre captación para techadores" className="hover:text-foreground transition-colors">FAQ</a>
             <a href="/#sobre-nosotros" title="Exclusividad territorial para contratistas de techado" className="hover:text-foreground transition-colors">Sobre Nosotros</a>
-            <a href="/checkout/zona-este" title="Plan de captación para techadores en Zona Este" className="hover:text-foreground transition-colors">Plan Zona Este</a>
+            <button
+              onClick={onCtaClick}
+              title="Iniciar protocolo de selección para contratistas de techado"
+              className="hover:text-foreground transition-colors"
+            >
+              Empezar Ahora
+            </button>
           </nav>
         </div>
         <p className="text-sm text-muted-foreground text-center mt-6">
