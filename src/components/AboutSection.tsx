@@ -16,7 +16,7 @@ const fadeUp = {
 
 const AboutSection = ({ onCtaClick }: AboutSectionProps) => {
   return (
-    <section className="relative section-spacing">
+    <section id="sobre-nosotros" aria-labelledby="about-heading" className="relative section-spacing">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           custom={0}
@@ -32,6 +32,7 @@ const AboutSection = ({ onCtaClick }: AboutSectionProps) => {
 
         <div className="max-w-3xl">
           <motion.h2
+            id="about-heading"
             custom={1}
             initial="hidden"
             whileInView="visible"

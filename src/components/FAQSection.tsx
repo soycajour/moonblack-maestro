@@ -44,7 +44,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="relative section-spacing">
+    <section id="faq" aria-labelledby="faq-heading" className="relative section-spacing">
       <div className="container mx-auto px-6">
         <motion.div
           custom={0}
@@ -59,6 +59,7 @@ const FAQSection = () => {
         </motion.div>
 
         <motion.h2
+          id="faq-heading"
           custom={1}
           initial="hidden"
           whileInView="visible"
