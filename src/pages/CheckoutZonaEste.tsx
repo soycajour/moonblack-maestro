@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowLeft, Shield, MapPin, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 
 const CheckoutZonaEste = () => {
   const paypalRef = useRef<HTMLDivElement>(null);
@@ -40,36 +41,41 @@ const CheckoutZonaEste = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-lg">
-        <button
-          onClick={() => navigate("/")}
+      <SEOHead
+        title="Plan Zona Este - Captación para Techadores | MoonBlack Studios"
+        description="Suscripción mensual de $3,000 USD para captación inteligente de clientes de techado en Punta Cana, Bávaro e Higüey. Activa tu exclusividad territorial."
+      />
+      <main className="w-full max-w-lg">
+        <a
+          href="/"
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 text-sm"
+          title="Volver a la página principal de captación para techadores"
         >
           <ArrowLeft className="w-4 h-4" />
           Volver
-        </button>
+        </a>
 
-        <div className="glass-card p-8 md:p-10 space-y-8">
+        <article className="glass-card p-8 md:p-10 space-y-8">
           {/* Header */}
-          <div className="space-y-3">
+          <header className="space-y-3">
             <div className="flex items-center gap-2 text-primary text-xs font-medium uppercase tracking-widest">
-              <Shield className="w-4 h-4" />
+              <Shield className="w-4 h-4" aria-hidden="true" />
               MoonBlack Studios
             </div>
             <h1 className="text-2xl md:text-3xl font-light tracking-tight-custom text-foreground">
               Sistemas de Captación Inteligente
             </h1>
             <div className="flex items-center gap-2 text-muted-foreground text-sm">
-              <MapPin className="w-4 h-4 text-primary" />
+              <MapPin className="w-4 h-4 text-primary" aria-hidden="true" />
               Punta Cana / Bávaro / Higüey
             </div>
-          </div>
+          </header>
 
-          <div className="h-px bg-border/50" />
+          <div className="h-px bg-border/50" role="separator" />
 
           {/* Detalles */}
-          <div className="space-y-4">
-            <p className="text-muted-foreground text-sm leading-relaxed">
+          <section aria-label="Detalles del plan">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Optimización de procesos, filtrado de leads cualificados y sistemas de automatización para contratistas de techado en la Zona Este.
             </p>
 
@@ -81,14 +87,14 @@ const CheckoutZonaEste = () => {
                 "Soporte y optimización continua",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-foreground/80">
-                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" />
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          <div className="h-px bg-border/50" />
+          <div className="h-px bg-border/50" role="separator" />
 
           {/* Precio */}
           <div className="flex items-baseline justify-between">
@@ -99,7 +105,7 @@ const CheckoutZonaEste = () => {
             </div>
           </div>
 
-          <div className="h-px bg-border/50" />
+          <div className="h-px bg-border/50" role="separator" />
 
           {/* PayPal */}
           <div ref={paypalRef} className="min-h-[150px] flex items-center justify-center">
@@ -109,8 +115,8 @@ const CheckoutZonaEste = () => {
           <p className="text-muted-foreground/60 text-xs text-center">
             Pago procesado de forma segura por PayPal. Puedes cancelar en cualquier momento.
           </p>
-        </div>
-      </div>
+        </article>
+      </main>
     </div>
   );
 };

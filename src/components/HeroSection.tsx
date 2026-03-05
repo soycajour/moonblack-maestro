@@ -34,7 +34,7 @@ const bentoItems = [
 
 const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center">
       <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl pt-28 pb-12">
         {/* Badge */}
         <motion.div
@@ -55,6 +55,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
+          id="hero-heading"
           className="text-3xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tighter-custom text-foreground mb-6 heading-tight"
         >
           Infraestructura de Ventas para Techadores en el Este.
@@ -87,7 +88,8 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                 frameBorder="0"
                 allowFullScreen
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                title="VSL - MoonBlack Studios"
+                title="Video de presentación - Sistema de captación para contratistas de techado en Zona Este"
+                loading="lazy"
               />
             </div>
           </div>
